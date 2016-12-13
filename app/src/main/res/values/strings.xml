@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FirebaseUI-CRUD</string>
+    <string name="btnSignInOut_text">SignIn/Out</string>
+    <string name="btnSignIn_text">SignIn</string>
+    <string name="btnSignOut_text">SignOut</string>
+    <string name="btnNewString_text">New string</string>
+    <string name="btnStringListEditor_text">String list editor</string>
+</resources>

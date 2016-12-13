@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'YOUR_ALIAS'
+            keyPassword 'YOUR_PASS'
+            storeFile file('YOUR_FILE')
+            storePassword 'YOUR_PASS'
+        }
+    }
+
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId 'vlfsoft.example.firebaseui_crud'
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+
+    compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
+
+    // https://firebase.google.com/docs/auth/android/google-signin
+    compile "com.google.firebase:firebase-auth:9.4.0"
+    compile "com.google.android.gms:play-services-auth:9.4.0"
+
+    // https://firebase.google.com/docs/database/android/start/
+    compile 'com.google.firebase:firebase-database:9.4.0'
+
+    // https://github.com/firebase/FirebaseUI-Android
+    // FirebaseUI Auth only
+    compile 'com.firebaseui:firebase-ui-auth:0.4.4'
+    compile 'com.firebaseui:firebase-ui-database:0.4.4'
+
+}
+
+// https://developers.google.com/android/guides/google-services-plugin
+apply plugin: 'com.google.gms.google-services'
